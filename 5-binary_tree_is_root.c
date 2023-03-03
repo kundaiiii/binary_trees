@@ -2,16 +2,13 @@
 
 /**
  * binary_tree_is_root - checks if a node is a root
+ * @node: node to check
  *
- * @node: pointer to the node to check
- * Return: 1 if node is a root, otherwise 0
+ * Return: 1 if node is a root
+ *         0 if not a root
+ *         0 if node is NULL
  */
 int binary_tree_is_root(const binary_tree_t *node)
 {
-	int root = 0;
-
-	if (node && !(node->parent))
-		root = 1;
-
-	return (root);
+	return ((!node || node->parent) ? 0 : 1);
 }
